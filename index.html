@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tech Helper is a work-in-progress prototype for plain-language technology guidance designed with older adults in mind.">
+  <title>Tech Helper | Senior-Friendly Technology Support Prototype</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Tech Helper home">
+      <span class="brand-mark" aria-hidden="true">TH</span>
+      <span>Tech Helper</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#guides">Guides</a>
+      <a href="#healthcare">Healthcare</a>
+      <a href="#emergency">Emergency Help</a>
+      <a href="#about">About</a>
+    </nav>
+    <button id="text-toggle" class="text-toggle" type="button" aria-pressed="false">Larger text</button>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-copy">
+        <p class="status">Work in progress · Initially built in Base44</p>
+        <h1>Technology help that starts with patience.</h1>
+        <p class="lead">A senior-friendly support prototype with plain-language guides, clear navigation, and step-by-step help for everyday and healthcare technology.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#healthcare">View healthcare guides</a>
+          <a class="button secondary" href="#emergency">Try emergency help</a>
+        </div>
+      </div>
+      <aside class="principles" aria-label="Design principles">
+        <h2>Designed around</h2>
+        <ul>
+          <li><span aria-hidden="true">✓</span> Large, readable text</li>
+          <li><span aria-hidden="true">✓</span> One clear step at a time</li>
+          <li><span aria-hidden="true">✓</span> Familiar, everyday language</li>
+          <li><span aria-hidden="true">✓</span> Reassuring troubleshooting</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="guides" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Explore</p>
+        <h2>What would you like help with?</h2>
+        <p>Choose a topic or search for a guide.</p>
+      </div>
+      <label class="search">
+        <span>Search the prototype</span>
+        <input id="guide-search" type="search" placeholder="Try “patient portal” or “WiFi”">
+      </label>
+      <div id="guide-grid" class="card-grid">
+        <article class="topic-card" data-search="android phone tablet device">
+          <span class="topic-icon green" aria-hidden="true">A</span>
+          <h3>Android Phone & Tablet</h3>
+          <p>Learn to use your Android device.</p>
+        </article>
+        <article class="topic-card" data-search="iphone ipad apple device">
+          <span class="topic-icon gray" aria-hidden="true"></span>
+          <h3>iPhone & iPad</h3>
+          <p>Build confidence using Apple devices.</p>
+        </article>
+        <article class="topic-card" data-search="windows computer pc">
+          <span class="topic-icon blue" aria-hidden="true">W</span>
+          <h3>Windows Computer</h3>
+          <p>Navigate your computer with confidence.</p>
+        </article>
+        <article class="topic-card" data-search="healthcare medical patient portal telemedicine prescription appointment">
+          <span class="topic-icon red" aria-hidden="true">♥</span>
+          <h3>Healthcare & Medical</h3>
+          <p>Access common health services online.</p>
+        </article>
+        <article class="topic-card" data-search="helpful tools docusign email glossary dictionary">
+          <span class="topic-icon purple" aria-hidden="true">?</span>
+          <h3>Helpful Tools</h3>
+          <p>Understand DocuSign, email, and tech terms.</p>
+        </article>
+        <article class="topic-card" data-search="troubleshooting problems frozen internet turn on calls wifi">
+          <span class="topic-icon orange" aria-hidden="true">!</span>
+          <h3>Fix Common Problems</h3>
+          <p>Start with calm, practical troubleshooting.</p>
+        </article>
+      </div>
+      <p id="no-results" class="no-results" hidden>No matching topic was found in this prototype.</p>
+    </section>
+
+    <section id="healthcare" class="section healthcare-section">
+      <div class="section-heading">
+        <p class="eyebrow">Healthcare technology</p>
+        <h2>Manage your health online with more confidence</h2>
+        <p>This prototype organizes common tasks into clearly named, approachable guides.</p>
+      </div>
+      <div class="guide-list">
+        <article><span aria-hidden="true">01</span><div><h3>How to Use Your Patient Portal</h3><p>Find messages, results, and common account features.</p></div></article>
+        <article><span aria-hidden="true">02</span><div><h3>Setting Up a Video Doctor Appointment</h3><p>Prepare for a telemedicine visit without rushing.</p></div></article>
+        <article><span aria-hidden="true">03</span><div><h3>Managing Your Prescriptions Online</h3><p>Understand the steps involved in common prescription tasks.</p></div></article>
+        <article><span aria-hidden="true">04</span><div><h3>Understanding Your Health Insurance Online</h3><p>Navigate common online insurance information.</p></div></article>
+        <article><span aria-hidden="true">05</span><div><h3>Using Health Apps Safely and Effectively</h3><p>Approach health apps with confidence and care.</p></div></article>
+        <article><span aria-hidden="true">06</span><div><h3>Scheduling Medical Appointments Online</h3><p>Follow a clear path through online booking.</p></div></article>
+      </div>
+      <p class="prototype-note">Guide topics are shown as a portfolio preview. The full instructional content is still being developed.</p>
+    </section>
+
+    <section id="emergency" class="section emergency-section">
+      <div class="section-heading">
+        <p class="eyebrow">When something goes wrong</p>
+        <h2>Need help right now?</h2>
+        <p>Select a common problem to see a calm first step.</p>
+      </div>
+      <div class="emergency-grid" role="list">
+        <button class="emergency-card" type="button" data-solution="frozen" role="listitem"><strong>Device Frozen</strong><span>Screen won’t respond</span></button>
+        <button class="emergency-card" type="button" data-solution="internet" role="listitem"><strong>No Internet</strong><span>Can’t connect online</span></button>
+        <button class="emergency-card" type="button" data-solution="power" role="listitem"><strong>Won’t Turn On</strong><span>Device appears completely off</span></button>
+        <button class="emergency-card" type="button" data-solution="calls" role="listitem"><strong>Can’t Make Calls</strong><span>Phone calling isn’t working</span></button>
+      </div>
+      <div id="solution-panel" class="solution-panel" tabindex="-1" aria-live="polite">
+        <p class="solution-label">Select a problem above</p>
+        <h3>Your first step will appear here.</h3>
+        <p>The prototype uses short instructions and reassurance before moving to the next troubleshooting step.</p>
+      </div>
+    </section>
+
+    <section id="about" class="section about-section">
+      <div>
+        <p class="eyebrow">About this project</p>
+        <h2>Why I started Tech Helper</h2>
+      </div>
+      <div class="about-copy">
+        <p>I started Tech Helper to explore how patient, plain-language design could make technology feel less intimidating for seniors.</p>
+        <p>The original prototype was built in Base44 and included everyday device help, a searchable glossary, emergency troubleshooting flows, and healthcare topics such as patient portals and telemedicine.</p>
+        <p>This static portfolio version is intentionally labelled as a work in progress. It demonstrates the concept and interaction approach without presenting the prototype as a finished product or clinical resource.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Tech Helper · Work-in-progress portfolio prototype</p>
+    <p>Not medical advice or an emergency service.</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
