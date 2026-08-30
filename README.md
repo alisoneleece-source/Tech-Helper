@@ -1,22 +1,27 @@
 # Tech Helper
 
-Tech Helper is a work-in-progress technology-support prototype originally built in Base44.
+Tech Helper is a work-in-progress technology-support prototype originally built in Base44. This repository restores the exported React source into its intended project structure and publishes a recruiter-friendly demonstration through GitHub Pages.
 
-I created it to explore how patient, plain-language support could make digital tools feel less intimidating for people who may need extra help navigating technology. The project includes everyday device support, troubleshooting, accessibility-focused guidance, and help using care-provider technology such as patient portals, online appointment systems, and virtual-visit platforms.
+The project is designed around plain-language, patient technology support for people who may be less comfortable with digital tools. Examples include device accessibility, troubleshooting, patient portals, online appointment systems, virtual-visit setup, DocuSign, and everyday communication tools.
 
-**Tech Helper is not a healthcare resource and does not provide medical advice.** Its care-related content is about navigating the technology around a person's care, not making decisions about that care.
+**Important:** Tech Helper does not provide medical advice or clinical guidance. Its care-related content is about navigating the technology used by care providers and related services.
 
-## Live prototype
-
-The GitHub Pages site for this repository acts as the portfolio entry point and opens the original Base44 prototype:
-
-https://techhelper-1.base44.app/
-
-## Project notes
+## Origin
 
 - Original platform: Base44
-- Status: Work in progress
-- Focus: Plain-language technology support and accessibility
-- Audience considered: People who may be less comfortable with digital tools, including older adults
+- Framework: React + Vite + Tailwind CSS
+- Data model: Base44 entities
+- Restored for GitHub Pages from the original Base44 export
 
-The repository retains a backup branch of the earlier static demonstration so that version is not lost while the main portfolio path points to the original working prototype.
+## Local development
+
+```bash
+npm install
+VITE_BASE44_APP_ID=68d2c3d10887bbe5530210d6 VITE_BASE44_BACKEND_URL=https://techhelper-1.base44.app VITE_BASE44_APP_BASE_URL=https://techhelper-1.base44.app npm run dev
+```
+
+## Build
+
+```bash
+VITE_BASE44_APP_ID=68d2c3d10887bbe5530210d6 VITE_BASE44_BACKEND_URL=https://techhelper-1.base44.app VITE_BASE44_APP_BASE_URL=https://techhelper-1.base44.app npm run build
+```
