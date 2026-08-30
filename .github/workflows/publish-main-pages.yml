@@ -1,0 +1,56 @@
+name: Publish Tech Helper to Pages main
+
+on:
+  push:
+    branches: ["github-native-migration"]
+    paths:
+      - ".github/workflows/publish-main-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Tech Helper source
+        uses: actions/checkout@v4
+        with:
+          ref: github-native-migration
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Tech Helper
+        run: npm run build
+
+      - name: Check out Pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: site
+
+      - name: Replace redirect with built site
+        run: |
+          find site -mindepth 1 -maxdepth 1 ! -name .git ! -name README.md -exec rm -rf {} +
+          cp -R dist/. site/
+          touch site/.nojekyll
+
+      - name: Commit published site
+        run: |
+          cd site
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No site changes to publish"
+            exit 0
+          fi
+          git commit -m "Publish restored Tech Helper site"
+          git push origin main
