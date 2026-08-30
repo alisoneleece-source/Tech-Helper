@@ -1,0 +1,177 @@
+{
+  "name": "TechGuide",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Guide title"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "android",
+        "windows",
+        "apple",
+        "google",
+        "healthcare",
+        "tools",
+        "troubleshooting",
+        "basics"
+      ],
+      "description": "Guide category"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "beginner",
+        "easy",
+        "intermediate"
+      ],
+      "default": "beginner",
+      "description": "Difficulty level"
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief description of what this guide covers"
+    },
+    "steps": {
+      "type": "array",
+      "description": "Step-by-step instructions for simple guides",
+      "items": {
+        "type": "object",
+        "properties": {
+          "stepNumber": {
+            "type": "number"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "image_url": {
+            "type": "string"
+          },
+          "tip": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "device_type": {
+      "type": "string",
+      "enum": [
+        "android",
+        "iphone",
+        "windows",
+        "mac",
+        "tablet",
+        "all"
+      ],
+      "description": "Which device this guide is for"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Keywords for searching"
+    },
+    "video_url": {
+      "type": "string",
+      "description": "Optional video tutorial link"
+    },
+    "showDeviceSelection": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether to show device selection before steps"
+    },
+    "devices": {
+      "type": "array",
+      "description": "Device-specific instructions",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string"
+          },
+          "steps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "step": {
+                  "type": "number"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "image_url": {
+                  "type": "string"
+                },
+                "tip": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "subDevices": {
+            "type": "array",
+            "description": "Nested device options (e.g., Samsung, Pixel)",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "image": {
+                  "type": "string"
+                },
+                "steps": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "step": {
+                        "type": "number"
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "image_url": {
+                        "type": "string"
+                      },
+                      "tip": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "title",
+    "category",
+    "description"
+  ]
+}

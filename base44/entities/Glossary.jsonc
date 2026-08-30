@@ -1,0 +1,46 @@
+{
+  "name": "Glossary",
+  "type": "object",
+  "properties": {
+    "term": {
+      "type": "string",
+      "description": "Technical term"
+    },
+    "simple_definition": {
+      "type": "string",
+      "description": "Easy-to-understand explanation"
+    },
+    "detailed_explanation": {
+      "type": "string",
+      "description": "More detailed explanation if needed"
+    },
+    "visual_example": {
+      "type": "string",
+      "description": "URL to image showing the concept"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "general",
+        "android",
+        "windows",
+        "apple",
+        "internet",
+        "healthcare"
+      ],
+      "description": "What category this term belongs to"
+    },
+    "synonyms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Other names for this term"
+    }
+  },
+  "required": [
+    "term",
+    "simple_definition",
+    "category"
+  ]
+}
